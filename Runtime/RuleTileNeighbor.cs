@@ -25,7 +25,7 @@ namespace UnityEngine
             switch (neighbor)
             {
                 case TilingRule.Neighbor.This: return tile == this;
-                case TilingRule.Neighbor.NotThis: return !similarTile.Contains(tile);
+                case TilingRule.Neighbor.NotThis: return tile != this && !similarTile.Contains(tile);
                 case Neighbor.Similar: return (tile != null && similarTile.Contains(tile)) || tile == this;
             }
             return true;
