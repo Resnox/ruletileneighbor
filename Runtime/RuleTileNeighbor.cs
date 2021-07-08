@@ -19,11 +19,16 @@ namespace UnityEngine
 
         public override bool RuleMatch(int neighbor, TileBase tile)
         {
+            if (tile is RuleOverrideTile)
+                tile = (tile as RuleOverrideTile).m_InstanceTile;
+
             switch (neighbor)
             {
+                case TilingRule.Neighbor.This: return tile == this;
+                case TilingRule.Neighbor.NotThis: return !similarTile.Contains(tile);
                 case Neighbor.Similar: return (tile != null && similarTile.Contains(tile)) || tile == this;
             }
-            return base.RuleMatch(neighbor, tile);
+            return true;
         }
     }
 }

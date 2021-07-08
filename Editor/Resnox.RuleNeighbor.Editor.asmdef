@@ -1,0 +1,18 @@
+{
+    "name": "Resnox.RuleNeighbor.Editor",
+    "rootNamespace": "UnityEditor",
+    "references": [
+        "GUID:613783dc1674e844b87788ea74ede0f6",
+        "GUID:cbdf09464b6b87745be748a67e5a21a0",
+        "GUID:d8d99ae075a563b40988d49bb4aaba73"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
