@@ -1,11 +1,12 @@
 {
   "name": "com.resnox.ruleneighbor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Rule Tile Neighbor",
   "description": "Add a new type of Rule Tile that also stick to neighbors.",
   "unity": "2019.1",
   "unityRelease": "0b0",
   "category": "2D",
+  "changelogUrl": "https://github.com/resnox/ruletileneighbor/CHANGELOG.md",
   "dependencies": {
     "com.unity.modules.tilemap": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",

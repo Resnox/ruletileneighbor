@@ -7,14 +7,15 @@ using UnityEngine.Serialization;
 
 namespace UnityEngine
 {
-    [CreateAssetMenu(menuName = "2D/Tiles/Rule Tiles Neighbour", order = 101)]
+    [CreateAssetMenu(menuName = "2D/Tiles/Rule Tile Neighbor/New Rule Tile")]
     public class RuleTileNeighbor : RuleTile<RuleTileNeighbor.Neighbor>
     {
-        public TileBase[] similarTile = new TileBase[0];
+        public RuleTileNeighborGroup similarTileGroup;
 
         public class Neighbor : RuleTile.TilingRule.Neighbor
         {
             public const int Similar = 3;
+            public const int NotSimilar = 4;
         }
 
         public override bool RuleMatch(int neighbor, TileBase tile)
@@ -25,8 +26,9 @@ namespace UnityEngine
             switch (neighbor)
             {
                 case TilingRule.Neighbor.This: return tile == this;
-                case TilingRule.Neighbor.NotThis: return tile != this && !similarTile.Contains(tile);
-                case Neighbor.Similar: return (tile != null && similarTile.Contains(tile)) || tile == this;
+                case TilingRule.Neighbor.NotThis: return tile != this && !similarTileGroup.similarTiles.Contains(tile);
+                case Neighbor.Similar: return (tile != null && similarTileGroup.similarTiles.Contains(tile)) || tile == this;
+                case Neighbor.NotSimilar: return !similarTileGroup.similarTiles.Contains(tile);
             }
             return true;
         }
