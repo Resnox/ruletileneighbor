@@ -1,6 +1,6 @@
 {
   "name": "com.resnox.ruleneighbor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Rule Tile Neighbor",
   "description": "Add a new type of Rule Tile that also stick to neighbors.",
   "unity": "2019.1",
